@@ -13,7 +13,7 @@
   border: 1px solid;
   border-radius: 5px;
   width: auto;
-  border-color: #080808;
+  border-color: #08080;
   margin: 0;
   padding: 0;
 }
@@ -38,7 +38,7 @@
   margin-left: -3px;
 }
 #cssmenu.align-center ul ul {
-  text-align: left;
+  text-align: center;
 }
 #cssmenu.align-center > ul > li:first-child > a {
   border-radius: 0;
