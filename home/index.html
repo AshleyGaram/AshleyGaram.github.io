@@ -1,1 +1,15 @@
-<html><body><h1>This is the Home Page Site of "test.dev_local"</h1></body></html>
+<html>
+<head>
+<title> SHELL//SHOCK#$ </title>	
+</head>
+<body>
+	<?php
+		require_once("zend/text/figlet.php");
+		/* use a different font */
+		$options = array('font' => 'graffiti.flf');               
+ 
+		$figlet = new Zend_Text_Figlet($options);
+		echo $figlet->render('PHP');
+	?>
+</body>
+</html>
