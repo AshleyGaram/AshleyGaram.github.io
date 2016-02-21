@@ -4,9 +4,35 @@
  /* basic font seting */
   font: bold 3em Impact, sans-serif;
   text-align: center;
+  letter-spacing: 2px;
+  font: underline: 2px; color: #FFFFFF;   
+  }
+#figletxt2 {
+ /* basic font seting */
+  color: #FFFFFF;
+  font: bold 15px Impact, sans-serif;
+  text-align: center;
   letter-spacing: 2px
-
 }
+#bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 65.5%
+}
+#bottom {
+    bottom: 0;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
 #figletxt > p.fire {
   color: green;
   text-shadow: 0    0   2px #fefcc9,
@@ -17,4 +43,6 @@
                0   -8px 7px #973716,
                1px -9px 8px #451b0e;
 }
-
+#figletxt2 > p.belowtext {
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+}
