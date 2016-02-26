@@ -1,0 +1,8 @@
+html, body { height: 100%; }
+body, h1, h2, p { border: 0px none; margin: 0px; padding: 0px; }
+body { font-family: helvetica,arial,sans-serif; background-color: rgb(68, 68, 68); background-image: radial-gradient(circle at 50% 50% , rgb(136, 136, 136) 0px, rgb(68, 68, 68) 300px); background-size: 100% 100%; perspective: 500px; }
+a { color: rgb(187, 187, 187); }
+#text { position: absolute; width: 600px; height: 120px; left: 50%; top: 50%; margin-left: -300px; margin-top: -60px; text-align: center; text-transform: uppercase; color: rgb(243, 243, 243); text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); }
+h1 { font-size: 50px; }
+h2 { font-size: 35px; }
+p { top: 0px; width: 100%; text-align: center; padding: 10px 0px; font-size: 12px; color: rgb(170, 170, 170); text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1); }
