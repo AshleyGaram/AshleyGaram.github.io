@@ -1,247 +1,154 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<html class="no-js" lang="en-AU">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        <!-- TabBar Title on website name (below)-->
 
-<title>iScroll demo: infinite scrolling</title>
+        <title>SHELL @ SHOCKED # $</title>
 
-<script type="text/javascript" src="../../build/iscroll-infinite.js"></script>
+        <meta name="description" content="My Scripting Site By Ashley Garam">
 
-<script type="text/javascript">
-/******************************************************************************
- *
- * For the sake of keeping the script dependecy free I'm including a custom
- * AJAX function. You should probably use a third party plugin
- *
- */
-function ajax (url, parms) {
-	parms = parms || {};
-	var req = new XMLHttpRequest(),
-		post = parms.post || null,
-		callback = parms.callback || null,
-		timeout = parms.timeout || null;
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
 
-	req.onreadystatechange = function () {
-		if ( req.readyState != 4 ) return;
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        
+        <link rel="canonical" href="http://ashleygaram.github.io_88/" >
 
-		// Error
-		if ( req.status != 200 && req.status != 304 ) {
-			if ( callback ) callback(false);
-			return;
-		}
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
 
-		if ( callback ) callback(req.responseText);
-	};
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
 
-	if ( post ) {
-		req.open('POST', url, true);
-		req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-	} else {
-		req.open('GET', url, true);
-	}
+        <!-- StyleSheet Links below -->
+        <!-- Main Elements for Site to be viewble on all devices -->
+        <link rel="stylesheet" href="css_main/normalize.css">
+        <link rel="stylesheet" href="css_main/main.css">
+        
+        <link rel="stylesheet" href="css_main/wholepageview.css">
+        
+        <!-- TopTitle Style Sheet Element-->
+        <link rel="stylesheet" type="text/css" href="css_main/css_toptitle/toptile.css" media="all">
 
-	req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        <!-- Second line TopTitle Style Sheet Element-->
+        <link rel="stylesheet" type="text/css" href="css_main/css_toptitle/2ndline.css" media="all">
 
-	req.send(post);
+        <!-- Menu Style Sheet Element-->
+        <link rel="stylesheet" type="text/css" href="css_main/css_menutable/menus.css" media="all">
 
-	if ( timeout ) {
-		setTimeout(function () {
-			req.onreadystatechange = function () {};
-			req.abort();
-			if ( callback ) callback(false);
-		}, timeout);
-	}
-}
-/*
- *****************************************************************************/
+        <!-- Display Text after Menu TopTitle Style Sheet Element-->
+        <link rel="stylesheet" type="text/css" href="css_main/css_Dtext/displaytext.css" media="all">
 
-var myScroll;
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
 
-function loaded () {
-	myScroll = new IScroll('#wrapper', {
-		mouseWheel: true,
-		infiniteElements: '#scroller .row',
-		//infiniteLimit: 2000,
-		dataset: requestData,
-		dataFiller: updateContent,
-		cacheSize: 1000
-	});
-}
+    </head>
+        <body>
+        <div id='wholepageview'>
+            <!-- Add your site or application content here -->
+            <!--Main Title Displayed -->
+            <div id='toptitle'>
+                <p>SHELL@SHOCKED#$</p>
+            </div>
 
-function requestData (start, count) {
-	ajax('dataset.php?start=' + +start + '&count=' + +count, {
-		callback: function (data) {
-			data = JSON.parse(data);
-			myScroll.updateCache(start, data);
-		}
-	});
-}
+            <!-- 2nd Line under main title -->
 
-function updateContent (el, data) {
-	el.innerHTML = data;
-}
+            <div id='twoline'>
+                <p>A Linux BLOG, And Scripting SHOWCASE</p>
+                <p>Developed by Ashley Garam</p>
+            </div>
+        </body>
+        <body>
+        <!-- New Body Start -->
 
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        
+        <body __flashresizer_elements="80" style="background:#000000">
+        </body>
+        
+        <body>
+        
 
-</script>
+        <!-- Menu Element Section -->
 
-<style type="text/css">
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
+        <div id="centeredmenu">
+            <ul>
+                <li><a href="#">Tab one</a>
+                    <ul>
+                        <li><a href="#">Link one</a></li>
+                        <li><a href="#">Link two</a></li>
+                        <li><a href="#">Link three</a></li>
+                        <li><a href="#">Link four</a></li>
+                        <li><a href="#">Link five</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Long tab three</a>
+                    <ul>
+                        <li><a href="#">Link one</a></li>
+                        <li><a href="#">Link two</a></li>
+                        <li><a href="#">Link three</a></li>
+                        <li><a href="#">Link four</a></li>
+                        <li><a href="#">Link five is a long link that wraps</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Long tab three</a>
+                    <ul>
+                        <li><a href="#">Link one</a></li>
+                        <li><a href="#">Link two</a></li>
+                        <li><a href="#">Link three</a></li>
+                        <li><a href="#">Link four</a></li>
+                        <li><a href="#">Link five</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tab four</a>
+                    <ul class="last">
+                        <li><a href="#">Link one</a></li>
+                        <li><a href="#">Link two</a></li>
+                        <li><a href="#">Link three</a></li>
+                        <li><a href="#">Link four</a></li>
+                        <li><a href="#">Link five</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </body>
+    
 
-html {
-	-ms-touch-action: none;
-}
+        <!-- New Body Start -->
 
-body,ul,li {
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
+        <body>
 
-body {
-	font-size: 12px;
-	font-family: ubuntu, helvetica, arial;
-	overflow: hidden; /* this is important to prevent the whole page to bounce */
-}
+        <div id='bottom'>
+        <p><iframe src="/txt/myfile2.txt" frameborder="7" height="800" width="100%"></iframe></p>
+        </div>
+    </div>
+        
+        </body>
+        
+    <body>        
 
-#header {
-	position: absolute;
-	z-index: 2;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 45px;
-	line-height: 45px;
-	background: #CD235C;
-	padding: 0;
-	color: #eee;
-	font-size: 20px;
-	text-align: center;
-	font-weight: bold;
-}
+        <script src="js/vendor/jquery-2.1.0.min.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/main.js"></script>
 
-#footer {
-	position: absolute;
-	z-index: 2;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 48px;
-	background: #444;
-	padding: 0;
-	border-top: 1px solid #444;
-}
-
-#wrapper {
-	position: absolute;
-	z-index: 1;
-	top: 45px;
-	bottom: 48px;
-	left: 0;
-	width: 100%;
-	background: #ccc;
-	overflow: hidden;
-}
-
-#scroller {
-	position: absolute;
-	z-index: 1;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	width: 100%;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	-o-text-size-adjust: none;
-	text-size-adjust: none;
-}
-
-#scroller ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	text-align: left;
-	position: relative;
-}
-
-#scroller li {
-	position: absolute;
-	width: 100%;
-	top: 0;
-	left: 0;
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	padding: 0 10px;
-	height: 40px;
-	line-height: 40px;
-	border-bottom: 1px solid #ccc;
-	border-top: 1px solid #fff;
-	background-color: #fafafa;
-	font-size: 16px;
-}
-
-</style>
-</head>
-<body onload="loaded()">
-<div id="header">iScroll</div>
-
-<div id="wrapper">
-	<div id="scroller">
-		<ul>
-			<li class="row">Row 1</li>
-			<li class="row">Row 2</li>
-			<li class="row">Row 3</li>
-			<li class="row">Row 4</li>
-			<li class="row">Row 5</li>
-			<li class="row">Row 6</li>
-			<li class="row">Row 7</li>
-			<li class="row">Row 8</li>
-			<li class="row">Row 9</li>
-			<li class="row">Row 10</li>
-			<li class="row">Row 11</li>
-			<li class="row">Row 12</li>
-			<li class="row">Row 13</li>
-			<li class="row">Row 14</li>
-			<li class="row">Row 15</li>
-
-			<li class="row">Row 16</li>
-			<li class="row">Row 17</li>
-			<li class="row">Row 18</li>
-			<li class="row">Row 19</li>
-			<li class="row">Row 20</li>
-			<li class="row">Row 21</li>
-			<li class="row">Row 22</li>
-			<li class="row">Row 23</li>
-			<li class="row">Row 24</li>
-			<li class="row">Row 25</li>
-			<li class="row">Row 26</li>
-			<li class="row">Row 27</li>
-			<li class="row">Row 28</li>
-			<li class="row">Row 29</li>
-			<li class="row">Row 30</li>
-		</ul>
-	</div>
-</div>
-
-<div id="footer"></div>
-
-</body>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-74367109-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
 </html>
