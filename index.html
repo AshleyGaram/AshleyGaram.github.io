@@ -1,151 +1,118 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-AU">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        
-        <!-- TabBar Title on website name (below)-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>iScroll demo: zoom</title>
 
-        <title>SHELL @ SHOCKED # $</title>
+<script type="application/javascript" src="../../src/iscroll.js"></script>
 
-        <meta name="description" content="My Scripting Site By Ashley Garam">
+<script type="text/javascript">
 
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-        <meta http-equiv="cleartype" content="on">
+var myScroll;
+function loaded() {
+	myScroll = new iScroll('wrapper', { zoom:true });
+}
 
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="">
-        
-        <link rel="canonical" href="http://ashleygaram.github.io_88/" >
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
-        <link rel="shortcut icon" sizes="196x196" href="img/touch/touch-icon-196x196.png">
-        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+document.addEventListener('DOMContentLoaded', loaded, false);
 
-        <!-- Tile icon for Win8 (144x144 + tile color) -->
-        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
-        <meta name="msapplication-TileColor" content="#222222">
+</script>
 
-        <!-- StyleSheet Links below -->
-        <!-- Main Elements for Site to be viewble on all devices -->
-        <link rel="stylesheet" href="css_main/normalize.css">
-        <link rel="stylesheet" href="css_main/main.css">
+<style type="text/css" media="all">
+body,ul,li,p {
+	padding:0;
+	margin:0;
+	border:0;
+}
 
-        <!-- TopTitle Style Sheet Element-->
-        <link rel="stylesheet" type="text/css" href="css_main/css_toptitle/toptile.css" media="all">
+body {
+	font-size:12px;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+	font-family:helvetica;
+}
 
-        <!-- Second line TopTitle Style Sheet Element-->
-        <link rel="stylesheet" type="text/css" href="css_main/css_toptitle/2ndline.css" media="all">
+#header {
+	position:absolute;
+	top:0; left:0;
+	width:100%;
+	height:45px;
+	line-height:45px;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #fe96c9), color-stop(0.05, #d51875), color-stop(1, #7b0a2e));
+	background-image:-moz-linear-gradient(top, #fe96c9, #d51875 5%, #7b0a2e);
+	background-image:-o-linear-gradient(top, #fe96c9, #d51875 5%, #7b0a2e);
+	padding:0;
+	color:#eee;
+	font-size:20px;
+	text-align:center;
+}
 
-        <!-- Menu Style Sheet Element-->
-        <link rel="stylesheet" type="text/css" href="css_main/css_menutable/menus.css" media="all">
+#header a {
+	color:#f3f3f3;
+	text-decoration:none;
+	font-weight:bold;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.5);
+}
 
-        <!-- Display Text after Menu TopTitle Style Sheet Element-->
-        <link rel="stylesheet" type="text/css" href="css_main/css_Dtext/displaytext.css" media="all">
+#footer {
+	position:absolute;
+	bottom:0; left:0;
+	width:100%;
+	height:48px;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #999), color-stop(0.02, #666), color-stop(1, #222));
+	background-image:-moz-linear-gradient(top, #999, #666 2%, #222);
+	background-image:-o-linear-gradient(top, #999, #666 2%, #222);
+	padding:0;
+	border-top:1px solid #444;
+}
 
-        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+#wrapper {
+	position:absolute; z-index:1;
+	top:45px; bottom:48px; left:0;
+	width:100%;
+	background:#aaa;
+	overflow:auto;
+}
 
-    </head>
-        <body>
+#scroller {
+	position:relative;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
 
-            <!-- Add your site or application content here -->
-            <!--Main Title Displayed -->
-            <div id='toptitle'>
-                <p> SHELL @ SHOCK # $ </p>
-            </div>
+	width:640px;
+	padding:0;
+	background:#fff;
+}
 
-            <!-- 2nd Line under main title -->
+p {
+	display:block;
+	width:624px;
+	margin-bottom:1em;
+	padding:8px;
+	font-size:14px;
+}
 
-            <div id='twoline'>
-                <p>A Linux BLOG, And Scripting SHOWCASE</p>
-                <p>Developed by Ashley Garam</p>
-            </div>
-        </body>
-        <body>
-        <!-- New Body Start -->
+p img {
+	margin:4px 8px;
+	-webkit-transform:translate3d(0,0,0);
+}
+</style>
+</head>
+<body>
+<div id="header"><a href="http://cubiq.org/iscroll">iScroll</a></div>
+<div id="wrapper">
+	<div id="scroller">
+		<p><img src="iscroll.jpg" width="100" height="122" alt="iscroll" style="float:left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+		<p><img src="iscroll.jpg" width="100" height="122" alt="iscroll" style="float:right">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+	</div>
+</div>
 
-        
-        <body __flashresizer_elements="80" style="background:#000000">
-        </body>
-        
-        <body>
-        
+<div id="footer"></div>
 
-        <!-- Menu Element Section -->
-
-        <div id="centeredmenu">
-            <ul>
-                <li><a href="#">Tab one</a>
-                    <ul style="background:#000000">
-                        <li><a href="#">Link one</a></li>
-                        <li><a href="#">Link two</a></li>
-                        <li><a href="#">Link three</a></li>
-                        <li><a href="#">Link four</a></li>
-                        <li><a href="#">Link five</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Long tab three</a>
-                    <ul>
-                        <li><a href="#">Link one</a></li>
-                        <li><a href="#">Link two</a></li>
-                        <li><a href="#">Link three</a></li>
-                        <li><a href="#">Link four</a></li>
-                        <li><a href="#">Link five is a long link that wraps</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Long tab three</a>
-                    <ul>
-                        <li><a href="#">Link one</a></li>
-                        <li><a href="#">Link two</a></li>
-                        <li><a href="#">Link three</a></li>
-                        <li><a href="#">Link four</a></li>
-                        <li><a href="#">Link five</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Tab four</a>
-                    <ul class="last">
-                        <li><a href="#">Link one</a></li>
-                        <li><a href="#">Link two</a></li>
-                        <li><a href="#">Link three</a></li>
-                        <li><a href="#">Link four</a></li>
-                        <li><a href="#">Link five</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </body>
-    
-
-        <!-- New Body Start -->
-
-        <body>
-
-        <div id='bottom'>
-        <p><iframe src="/txt/myfile2.txt" frameborder="7" height="800" width="100%"></iframe></p>
-        </div>
-        
-        </body>
-        
-    <body>        
-
-        <script src="js/vendor/jquery-2.1.0.min.js"></script>
-        <script src="js/helper.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-74367109-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-    </body>
+</body>
 </html>
