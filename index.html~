@@ -129,7 +129,7 @@
         <body>
 
         <div id='bottom'>
-        <p><iframe src="404.html" frameborder="7" height="800" width="100%"></iframe></p>
+        <p><iframe src="/txt/myfile2.txt" frameborder="7" height="800" width="100%"></iframe></p>
         </div>
     </div>
         
