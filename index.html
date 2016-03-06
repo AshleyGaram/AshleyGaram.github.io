@@ -1,57 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- TabBar Title on website name (below)-->
 
+        <title>SHELL @ SHOCKED # $</title>
 
+        <meta name="description" content="My Scripting Site By Ashley Garam">
 
-<link rel="stylesheet" type="text/css" href="index.css" media="all">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="canonical" href="http://ashleygaram.github.io_88/" >
+
+        <!-- StyleSheet Links below -->
+        <!-- Main Elements for Site to be viewble on all devices -->
+
+        <!-- HomePage StyleSheet -->
+        <link rel="stylesheet" type="text/css" href="css_main/index_home.css" media="all">
+
+        <script src="js_main/background_matrix.js"></script>
 </head>
-<body __flashresizer_elements="0">
-<div id="dic_bubble" class="selection_bubble fontSize13 noSelect" style="z-index: 9999; border: 1px solid rgb(74, 174, 222);"></div>
-<div style="text-shadow: 1px 1px 0px rgb(187, 187, 187), 1px 2px 0px rgb(181, 181, 181), 2px 3px 0px rgb(172, 172, 172), 3px 4px 0px rgb(160, 160, 160), 4px 5px 0px rgb(145, 145, 145), 4px 6px 0px rgb(127, 127, 127), 5px 7px 1px rgba(0, 0, 0, 0.2), 10px 14px 6px rgba(0, 0, 0, 0.3); transform: translateZ(0px) rotateX(10.5deg) rotateY(-50.5deg);" id="text">
-	<h1>SHELL@SHOCKED#$</h1>
-	<h2><a href="http://ashleygaram.github.io_88/home">@</a></h2>
-	<h3>A Linux BLOG, And Scripting SHOWCASE</h3>
-	<h3>Developed by Ashley Garam</h3>
-	<h4>Click @ To Enter</h4>
+<body onload="init();">
+<canvas id="theMatrix" width="1280" height="800">
+<p>Your browser doesn't support canvas...L0Z3R</p>
+</canvas>
 
-</div>
-
-<p>Maximize window and move the mouse around.  This is A 3D text effect, Which works on All DeskTop Browser. Brought to you by <a href="http://ashleygaram.github.io_88/home">Ashley Garam</a></p>
-
-<script type="text/javascript">
-var text = document.getElementById('text'),
-	body = document.body,
-	steps = 7;
-function threedee (e) {
-	var x = Math.round(steps / (window.innerWidth / 2) * (window.innerWidth / 2 - e.clientX)),
-		y = Math.round(steps / (window.innerHeight / 2) * (window.innerHeight / 2 - e.clientY)),
-		shadow = '',
-		color = 190,
-		radius = 3,
-		i;
-	
-	for (i=0; i<steps; i++) {
-		tx = Math.round(x / steps * i);
-		ty = Math.round(y / steps * i);
-		if (tx || ty) {
-			color -= 3 * i;
-			shadow += tx + 'px ' + ty + 'px 0 rgb(' + color + ', ' + color + ', ' + color + '), ';
-		}
-	}
-
-	shadow += x + 'px ' + y + 'px 1px rgba(0,0,0,.2), ' + x*2 + 'px ' + y*2 + 'px 6px rgba(0,0,0,.3)';
-	
-	text.style.textShadow = shadow;
-	text.style.webkitTransform = 'translateZ(0) rotateX(' + y*1.5 + 'deg) rotateY(' + -x*1.5 + 'deg)';
-	text.style.MozTransform = 'translateZ(0) rotateX(' + y*1.5 + 'deg) rotateY(' + -x*1.5 + 'deg)';
-}
-
-document.addEventListener('mousemove', threedee, false);
-</script>
-
-
-<script src="d27a5d5aa5728b6d91d.js" type="text/javascript"></script><script src="l.js" type="text/javascript"></script><iframe src="index_1.html" style="position: absolute; top: -999px; left: -999px; visibility: hidden;"></iframe></body>
+</body>
 </html>
-<html>
