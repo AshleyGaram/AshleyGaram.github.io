@@ -1,0 +1,12 @@
+.threeline h3 {
+ /* basic font seting */
+ 	top: 60%;
+    left: 43.0%;
+    margin-top: -25px;
+    margin-left: -50px;
+    position: absolute;
+	color: white;
+	font: bold 15px Impact, sans-serif;
+  	text-align: center;
+  	letter-spacing: 2px;
+}
